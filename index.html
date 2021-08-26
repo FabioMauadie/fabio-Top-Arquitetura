@@ -1,0 +1,279 @@
+<!--essa versao do bootstrap v.3.3.7 dependendo da versao pode ter alteaçoes -->
+<!doctype html>
+<html>
+<head>
+    <!-- ele vai calcular o tamnho da tela a partir do disposivo em q o site esta sendo uitlizado e esse initial-scale vai evitar q ele de aquele zoom chato -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--charset corrige erros de acentuação-->
+    <meta charset="UTF-8">
+    <!--esse link diz para o html que vamos usar o jquery e devemos chamar sempre o jquery para depois chamar o bootstrap se nao as funcoes nao funciona...-->
+    <script src="jquery-3.3.1.min.js"></script>
+    <!--esse link diz para o html que queremos usar o bootstrap e deve ficar sempre depois do jquery-->
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <!--esse link é que devemos importar o javascript-->
+    <script src="bootstrap/js/bootstrap.js"></script> 
+    <!--esse link é que devemos importar o estilo.css-->
+    <link rel="stylesheet" type="text/css" href="estilo.css"> 
+    <link rel="stylesheet"href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css "> 
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default"><!--estiliza o menu-->
+            <div class="container"><!--da um espaçamento nas bordas-->
+                <nav class="navbar-header"><!--ele melhora o estilo do titulo é bom colocar-->
+                    <!--botao do hamburgue que vai fazer o collapse no menu quando estiver em layout mobile obs: o target deve ser o mesmo id da class navbar-collapse-->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-menu" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span><!--esses spans são os - do hamburguinho-->
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Fabio Top Arquiteturas</a>
+                </nav>
+                
+                <div id="collapse-menu" class="collapse navbar-collapse"><!--faz com que o hamburgue funcione rs-->
+                    <ul class="nav navbar-nav"><!--estiliza o barra de menu de acordo com a resolução-->
+                        <li><a href="#sobre-nos">Sobre Nós</a></li><!--esse caminho que está no href é o id que está na div e no section dos temas e como nosso site é uma pag só ele leva aonde está o id-->
+                        <li><a href="#nossos_projetos">Nossos Projetos</a></li>
+                        <li><a href="#depoimentos">Depoimentos</a></li>
+                        <li><a href="#video">Video</a></li>
+                        <li><a href="#contato">Contatos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--a imagem da casa amarela esta sendo chamada no rquivo estilo.cs-->
+        <!--fazendo o banner da casa amarela-->
+        <div class="container fabioBanner">
+            <div class ="banner">
+                <h1>Fabio Top Arquitetura</h1>
+                <p>Projentando a casa dos Sonhos desde 1991</p>
+                <a type="button" class="btn btn-primary btn-lg" href="#contato">Contate-nos agora
+                </a>
+            </div>
+        </div>
+    </header>
+    <div id="sobre-nos" class="container"><!--ele da um espaço nas bordas pra nao ficar coladas na margem--> 
+        
+        <h2>Sobre Nós</h2>
+        <div class="row"><!--cria um grid q cabe 12partes ele é utilizado para deixar uma coisa do lado da outra utilizando tbm a class col-sm-6-->
+            <!-- a classe do bootstrap.... class "img-responsive"...faz com que a imagem fique responsiva e se adapte conforme o tamanho da tela e projetos-responsivo foi preciso criar essa classe e editar ela no estilo.css para deixar uma imagem do lado da outra quando o site nao estiver sendo utilizado em celular  -->
+            <img class="img-responsive col-sm-6" src="img/empresa.jpg">
+            
+            <div class="panel-group col-sm-6" id="panel-chefe"><!--cria um grupo de painel e vai juntar esteticamente os paineis-->
+                <div class="panel panel-default"><!--cria um panel-->
+                    <div class="panel-heading"data-toggle="collapse" data-target="#paragrafo1"    data-parent="#panel-chefe"><!--cria a cabeça do painel-->
+                        <h5 class="painel-title" >Desde 1935</h5>
+                    </div>
+                    <div  class="collapse in" id="paragrafo1">
+                        <div class="panel-body">  
+                            <p >Desd 1935 trazendo casas, mansões e prédios lindos para o mundo</p>
+                        </div>
+                    </div> 
+                    <!-- esse data-toggle="collapse" data-target=#paragrafo1 cria um collapse no paragrafo abaixo para isso passamos o id no paragrafo e antes de tudo devemos inportar no head o jquery q deve ser baixado e o javascript
+                        OBS: NA CLASS="collapse" deixa a msg fechada e CLASS="colapse in" deixa a msg aberta
+                        essa class panel  cria uma painel englobando o paragrafo1 ...data-parent="#panel-chefe" faz com que quando um colapse é aberto o outro fecha-->
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h5 class="painel-title" data-toggle="collapse" data-target="#paragrafo2" data-parent="#panel-chefe">Preços acessíveis</h5>
+                        </div>
+                        <div id="paragrafo2" class="collapse">
+                            <div class="panel-body">  
+                                <p> Preços a partir de R$ 1000,00.</p>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h5 class="painel-title" data-toggle="collapse" data-target="#paragrafo3" data-parent="#panel-chefe">Mais de 300 prêmios em design e em conforto</h5>
+                        </div>
+                        <div id="paragrafo3" class="collapse">
+                            <div class="panel-body">  
+                                <p>Mais de 5 milhões de clientes satisfeitos em todo o mundo</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron"><!--jumbotron cria uma faixa -->
+            <div class="container">
+                <h3>Mais de 300 prêmios em design e em conforto</h3>
+                <p>Mais de 5 milhões de clientes satisfeitos em todo o mundo</p>
+            </div>
+        </div>
+        
+        <section id="nossos_projetos" class="container">
+            <h2>Nossos Projetos</h2>
+            <!--essa class thubnail cria um moldura em volta da img e é possivel colocar uma legenda-->
+            <div class="row">
+                <div class=" col-sm-3 col-md-4 col-lg-3">
+                    <div class="thumbnail">
+                        <img src="img/projetos/casa-castelo.png" class="img-responsive">
+                        <div class="caption"> <!--cria uma legenda para a img-->
+                            <h3>Casa Castelo</h3>
+                            <p>A Casa Castelo é o último lançamento da TopCasaFina Arquitetura, feita para um monge.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-4 col-lg-3">
+                    <div class="thumbnail">
+                        <img src="img/projetos/casa-lago.png" class="img-responsive">
+                        <div class="caption"> <!--cria uma legenda para a img-->
+                            <h3>Casa Castelo</h3>
+                            <p>A Casa do Lago foi lar de inúmeras pessoas que conheciam o presidente da época.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-4 col-lg-3">
+                    <div class="thumbnail">
+                        <img src="img/projetos/mercado-marapira.png" class="img-responsive">
+                        <div class="caption"> <!--cria uma legenda para a img-->
+                            <h3>Casa Castelo</h3>
+                            <p>O mercado Marapira foi projetado nos mínimos detalhes na arquitetura baseada em fruta.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-4 col-lg-3">
+                    <div class="thumbnail">
+                        <img src="img/projetos/palacio-dionisio.png" class="img-responsive">
+                        <div class="caption"> <!--cria uma legenda para a img-->
+                            <h3>Palácio Dionísio</h3>
+                            <p>O palácio Dionísio foi eleito pela revista 'Grandes palácios' como o palácio mais lindo do mundo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-4 col-lg-3">
+                    <div class="thumbnail">
+                        <img src="img/projetos/residencia-ludi.png" class="img-responsive">
+                        <div class="caption"> <!--cria uma legenda para a img-->
+                            <h3>Residência Ludi</h3>
+                            <p>A residência Ludi foi projetada para ser a mais bela casa de São Paulo pela revista Housing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="depoimentos">
+            <!--_________________________________carousel_______________________________________-->
+            <h3  id="tituloCarousel" class="container">Depoimentos dos Clientes</h3>
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators"><!--essa classe é os indicadores as "bolinhas" que ficam no carousel-->
+                    <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                </ol>
+                
+                <!-- Wrapper for slides essa classe entra as imagens que vai no carousel -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="img/depoimentos/depoimento1.png" class="img-responsive">
+                        <div class="carousel-caption"><!--aqui entra as legendas da imagem-->
+                            <h3>Fábio Mauadié</h3>
+                            <p>Gostei muito.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/depoimentos/depoimento2.png" class="img-responsive">
+                        <div class="carousel-caption"><!--aqui entra as legendas da imagem-->
+                            <h3>Veridiana Fernandes</h3>
+                            <p>Gostei, competência em primeiro lugar.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/depoimentos/depoimento3.png" class="img-responsive">
+                        <div class="carousel-caption"><!--aqui entra as legendas da imagem-->
+                            <h3>Gelson Lima Santos</h3>
+                            <p>Excelente trabalho</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+        <!--colocando um video do youtube...ache o video vai em compartilhar...incorporar e copie o iframe-->
+        
+        <div class="container">
+            <div class="row">
+                <section id="video" class="col-sm-6">          
+                    <h2> video Institucional</h2>
+                    <div class="embed-responsive embed-responsive-16by9"><!--deixa o video responsivo-->
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dna39G-C2MI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </section>
+                <br>
+                
+                <section id="contato" class="col-sm-6">
+                    
+                    <h2>Contato</h2>
+                    <p>Entre em contato conosco</p>
+                    <form>
+                        <div class="form-group"><!--ele cria um espaço entre os input e os nomes-->
+                            <label for="name">Nome:</label> <!--esse for name faz com que quando clicamos no label nome vá direto para o input-->
+                            <input type="text" class="form-control" id="name" placeholder="Name" required><!--para fazer com que o cursor vai direto para a input quando clicamos no label nome devemos colocar o id e para dar um estilo no input colocamos o form-control sem ele o campo fica simples-->
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <div class="input-group"><!--essa class faz uma marcação do @-->
+                                <div class="input-group-addon">@</div><!-- aqui colocamos o @-->
+                                <input type="email" class="form-control" id="email" placeholder="Seu e-mail" required>
+                            </div>
+                        </div>
+                        <div class="grupo-radio" ><!--é utilizado no css para ocupar só 50% da tela-->
+                            <div id="primeiroRadio" class="radio">
+                                <label>
+                                    <input type="radio" name="tipoPessoa" id="pFisica" value="option1" checked>
+                                    Pessoa Física
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="tipoPessoa" id="pJuridica" value="option2">
+                                    Pessoa Juridica
+                                </label>
+                            </div>  
+                        </div><!--
+                            FOI PRECISO UTILIZAR ESSE COMENTARIO PARA QUE O SELECT FICASSE DO LADO
+                        --><select  class="contato-selecionado form-control"><!--essa class da um estilo no input-->
+                            <option selected disabled>Tipo de Solicitação</option><!--selected faz com que esse campo fique selecionado quando a pag e carregada...o disabled faz com que ele nao seja selecionado-->
+                            <option>Casa</option>
+                            <option>Apartamento</option>
+                            <option>Mansão</option>
+                        </select>
+                        <br>
+                        <button id="enviar" type="onclick" class="btn btn-primary">Enviar</button>
+                        
+                    </form>  
+                </section>
+            </div>
+        </div>
+        <footer><!--criando o rodape do site-->
+            <address class="container">
+                <br>
+                <strong>Fabio Top Arquitetura</strong> <br>
+                rua Vergueiro, 3185, Vila Mariana<br>
+                São Paulo, SP<br>
+                TEL: (11) 5571-2751 ou 5083-3883<br>
+                Email: fabio.arquitetura@google.com.br
+                
+            </address>
+        </footer>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <!--esse script é para q o banner nao entre em conflito com o collapse ... o arq está em js...banner.js-->
+        <script src="bootstrap/js/banner.js"></script>  
+        
+    </body>
+    </html>
+    

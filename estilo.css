@@ -1,0 +1,89 @@
+/*colocando a imagem da mansao amarela como capa do header*/
+/*1° devemos dizer que a tag html ocupa 100%*/
+html {
+    height: 100%;
+}
+/*2° devemos dizer que a tag body ocupa 100%*/
+body {
+    height: 100%;
+}
+/*3° devemos dizer que a tag header ocupa 100% e colocamos a img do castelo*/
+header {
+    background-image: url(img/castelo.jpg);/*4° colocamos a imagem do catelo amarelo*/
+    background-size: cover; /*ele vai fazer com que a imagem fique como se fosse a capa do heade*/
+    background-position:top center;/*melhorando a posiçao da imagem em relaçao ao eixo x vai ficar la em cima em relaçao ao eixo y vai ficar centro */
+    height: 100%; /*5° devemos dizer que a tag header ocupa 100%*/
+}
+header h1 {
+    margin-top: 0;/*ajusta o h1 do banner*/
+    margin-bottom: 0;
+}
+.banner {
+    color: #fff;
+    background-color: rgba(0 ,0,0, 0.5);/*coloca uma cor preta no fundo com opacidade*/
+    padding: 20px;/*da um espaço no texto */
+    width: 80%;/*diminui o tamanho da quadrado da opacidade*/
+    border-radius: 9px;/*deixa a borda do quadro negro arredondada*/
+    position: absolute;/*para mudarmos a posição do banner devemos passar para absolute*/
+    top: 50%;/*falar q a posição do topo vai ficar na metade do header*/
+    left: 50%;/*falar q a posição da esquerda vai ficar na metade do header*/
+    transform: translate( -50%, -50% );/*faz com q fique bem no meio do header*/
+    transition: 0.3s;
+} 
+ 
+
+#panel-chefe {/*da um espaço da imagem para o painel do colapse*/
+    margin-top: 20px;
+}
+#tituloCarousel {
+    background-color:#0275D8;
+    padding-top: 25px ; /*como estamos usando o container devemos colocar espaço em cima*/
+    padding-bottom: 25px;/*como estamos usando o container devemos colocar espaço em baixo*/
+    color:#FFF;/*muda a cor da fonte*/
+    margin-bottom: 0px;/*o css da por padrao uma margin nos titulos e temos quee tirar para q o carousel fique colado com o titulo entao devemos zerar o margin-bottom*/
+    font-size: 24px;
+}
+.grupo-radio {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+.contato-selecionado {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+#primeiroRadio{
+    margin-top: 0;
+}
+footer {
+    background-color: #333;
+    color: #FFF;
+    padding: 20px;/*da uma espaco do lado de dentro da caixa preta*/
+    margin-top: 10px;/*da uma espaço do lado de fora da caixa preta..vai descolar do botao*/
+}
+
+/*___________________________________________________________________________________________*/
+/*DEIXANDO O SITE RESPONSIVO*/
+
+/*deixando a parte  "nosso projetos" responsivo...*/
+@media(min-width:768px){/*essa linha faz com que, quando a resolução do site seja >= a 768 px ocorra a ação q esta abaixo em projetos-responsivo*/
+.projetos-responsivo {
+    width: 50%;/*deixa com 50%  */
+    float: left; /**/
+}
+#panel-chefe {
+    margin-top: 0;
+}
+}
+@media(min-width:992px) {
+    .banner {
+        left: 15%;
+        transform: translate( -0, -35% );
+        width: 35%; /*aqui é o tamanho do banner com resolução para laptoop*/
+    }
+    .fabiobanner {
+        position: relative;
+        height: 100%;
+    }
+}
